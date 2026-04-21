@@ -1,45 +1,53 @@
 <a id="readme-top"></a>
 
 <!-- PROJECT SHIELDS -->
+<!--
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![License][license-shield]][license-url]
-
+-->
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <h3 align="center">GasMonitor</h3>
+  <img src="public/images/logo_gasmonitor.png" alt="Logo" width="200" height="120">
+  
 
   <p align="center">
     Sistema de monitoreo de gas con ESP32 y base de datos web
     <br />
     <br />
-    <a href="#">Ver Demo</a>
+    <a href="#">Acerca del Proyecto</a>
     &middot;
-    <a href="#">Reportar Bug</a>
+    <a href="#">Tecnologías</a>
     &middot;
-    <a href="#">Solicitar Función</a>
+     <a href="#">Roadmap</a>
+    &middot;
+     <a href="#">Licencia</a>
+    &middot;
+     <a href="#">Contacto</a>
+    &middot;
+    <a href="#">Instalación</a>
   </p>
 </div>
 
 ## Tabla de Contenidos
-
+<!--
 <details>
   <summary>Click para expandir</summary>
   <ol>
-    <li><a href="#about-the-project">Acerca del Proyecto</a></li>
-    <li><a href="#built-with">Tecnologías</a></li>
-    <li><a href="#getting-started">Inicio</a></li>
-    <li><a href="#usage">Uso</a></li>
+    <li><a href="#acerca-del-proyecto">Acerca del Proyecto</a></li>
+    <li><a href="#tecnologias">Tecnologías</a></li>
+    <li><a href="#inicio">Inicio</a></li>
+    <li><a href="#uso">Uso</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contribuir</a></li>
-    <li><a href="#license">Licencia</a></li>
-    <li><a href="#contact">Contacto</a></li>
+    <li><a href="#contribuir">Contribuir</a></li>
+    <li><a href="#licencia">Licencia</a></li>
+    <li><a href="#contacto">Contacto</a></li>
   </ol>
 </details>
-
+-->
 
 
 ##  Acerca del Proyecto
@@ -104,4 +112,4 @@ Este proyecto permite entender:
 1. Clonar el repositorio
 
 ```sh
-git clone https://github.com
+git clone https://github.com/Blinx87043/Gas-monitor

@@ -28,15 +28,8 @@ CREATE TABLE IF NOT EXISTS `gas` (
   KEY `Index 1` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Dumping data for table gas_monitor.gas: ~10 rows (approximately)
+-- Dumping data for table gas_monitor.gas: ~6 rows (approximately)
 INSERT INTO `gas` (`id`, `status`, `sensor`, `datatime`) VALUES
-	(1, '1.23', 0, '2026-04-12 01:24:48'),
-	(2, '99.11', 0, '2026-04-13 04:14:43'),
-	(3, '101.23', 0, '2026-04-13 04:14:54'),
-	(4, '179.69', 0, '2026-04-13 04:20:00'),
-	(5, '329.48', 0, '2026-04-13 04:29:08'),
-	(6, '246.81', 0, '2026-04-13 04:29:35'),
-	(7, '141.39', 0, '2026-04-13 04:29:45'),
 	(8, 'Alarma', 7.6, '2026-04-14 23:43:48'),
 	(9, 'Estable', 10, '2026-04-16 17:34:21'),
 	(10, 'Estable', 9.8, '2026-04-16 17:43:58'),
@@ -54,7 +47,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 -- Dumping data for table gas_monitor.users: ~1 rows (approximately)
 INSERT INTO `users` (`id`, `email`, `password`) VALUES
-	(1, 'ramfepe9@gmail.com', '$2y$10$eN4Nc6b4xdeJzJyiAKUlK.hHiw8Fh8OClNFEA1EEERuwl/YOTYCDi');
+	(1, 'admin@example.com', '$2y$10$h0/.nEfZyKXynDXZOsUSV.BxvZahncOkm/2rM0Q40Misk/SROGUMi');
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

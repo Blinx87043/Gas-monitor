@@ -20,15 +20,15 @@
     <br />
     <a href="#acerca-del-proyecto">Acerca del Proyecto</a>
     &middot;
-    <a href="#">Esquematico</a>
+    <a href="#esquematico">Esquematico</a>
     &middot;
-     <a href="#">Funcionamiento</a>
+     <a href="#tecnologías-utilizadas">Tecnologías utilizadas</a>
     &middot;
-     <a href="#">Interfaz Web</a>
+     <a href="#funcionamiento">Funcionamiento</a>
     &middot;
-     <a href="#">Contacto</a>
+     <a href="#interfaz-web">Interfaz Web</a>
     &middot;
-    <a href="#">Instalación</a>
+    <a href="#instalación">Instalación</a>
   </p>
 </div>
 
@@ -49,7 +49,6 @@
 </details>
 -->
 
-##  Inicio
 ##  Acerca del Proyecto
 
 GasMonitor es un proyecto desarrollado con el objetivo de comprender el manejo de bases de datos mediante una aplicación web, integrando hardware y software.

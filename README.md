@@ -11,7 +11,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <img src="public/images/logo_gasmonitor.png" alt="Logo" width="200" height="120">
+  <img src="public/images/logo_gasmonitor.png" alt="Logo" width="250" height="200">
   
 
   <p align="center">

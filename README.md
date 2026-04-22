@@ -64,7 +64,7 @@ El sistema consiste en:
 
 ### Esquematico
 <div align="center">
-  <img src="connection.png" alt="Logo" width="400" height="400">
+  <img src="connection.png" alt="conexiones" width="400" height="400">
 </div>
 
 ## Tecnologías Utilizadas
@@ -89,7 +89,7 @@ El sistema consiste en:
     - Alarma
     - Peligro
 ### modelo 3D
- <img src="mold.png" alt="Logo" width="400" height="400">
+ <img src="mold.png" alt="modelo_3d" width="400" height="400">
 
 ###  Interfaz Web
 

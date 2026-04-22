@@ -20,11 +20,11 @@
     <br />
     <a href="#acerca-del-proyecto">Acerca del Proyecto</a>
     &middot;
-    <a href="#">Tecnologías</a>
+    <a href="#">Esquematico</a>
     &middot;
-     <a href="#">Roadmap</a>
+     <a href="#">Funcionamiento</a>
     &middot;
-     <a href="#">Licencia</a>
+     <a href="#">Interfaz Web</a>
     &middot;
      <a href="#">Contacto</a>
     &middot;
@@ -38,9 +38,9 @@
   <summary>Click para expandir</summary>
   <ol>
     <li><a href="#acerca-del-proyecto">Acerca del Proyecto</a></li>
-    <li><a href="#tecnologias">Tecnologías</a></li>
-    <li><a href="#inicio">Inicio</a></li>
-    <li><a href="#uso">Uso</a></li>
+    <li><a href="#tecnologias">Esquematico</a></li>
+    <li><a href="#inicio">Funcionamiento</a></li>
+    <li><a href="#uso">Interfaz Web</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contribuir">Contribuir</a></li>
     <li><a href="#licencia">Licencia</a></li>
@@ -49,7 +49,7 @@
 </details>
 -->
 
-
+##  Inicio
 ##  Acerca del Proyecto
 
 GasMonitor es un proyecto desarrollado con el objetivo de comprender el manejo de bases de datos mediante una aplicación web, integrando hardware y software.
@@ -62,6 +62,20 @@ El sistema consiste en:
   - Buzzer
 - Comunicación cliente-servidor
 - Registro de datos en base de datos
+
+### Esquematico
+<div align="center">
+  <img src="connection.png" alt="Logo" width="400" height="400">
+</div>
+
+## Tecnologías Utilizadas
+
+- ESP32
+- Sensor MQ-9
+- PHP
+- HTML
+- MySQL / Base de datos
+- Comunicación HTTP
 
 ###  Funcionamiento
 
@@ -85,21 +99,7 @@ El sistema consiste en:
 Este proyecto permite entender:
 - Envío de datos desde dispositivos IoT
 - Manejo de bases de datos
-- Desarrollo web con backend
-
-
-
-## Tecnologías Utilizadas
-
-- ESP32
-- Sensor MQ-9
-- PHP
-- HTML
-- MySQL / Base de datos
-- Comunicación HTTP
-
-
-##  Inicio
+- Desarrollo web 
 
 ### Prerrequisitos
 

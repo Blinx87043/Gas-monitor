@@ -51,16 +51,7 @@
 
 ##  Acerca del Proyecto
 
-GasMonitor es un proyecto desarrollado con el objetivo de comprender el manejo de bases de datos mediante una aplicación web, integrando hardware y software.
-
-El sistema consiste en:
-
-- Un sensor de gas MQ-9 conectado a una ESP32
-- Indicadores físicos:
-  - LED RGB
-  - Buzzer
-- Comunicación cliente-servidor
-- Registro de datos en base de datos
+GasMonitor es un sistema inteligente para la detección y monitoreo de gases peligrosos, utilizando un microcontrolador ESP32 y una aplicación web para su monitoreo. 
 
 ### Esquematico
 <div align="center">
@@ -72,9 +63,8 @@ El sistema consiste en:
 - ESP32
 - Sensor MQ-9
 - PHP
-- HTML
-- MySQL / Base de datos
-- Comunicación HTTP
+- AdminLTE
+- MySQL
 
 ###  Funcionamiento
 
@@ -86,31 +76,37 @@ El sistema consiste en:
   - Registra el valor del ratio
   - Guarda fecha y hora
   - Clasifica el evento como:
-    - Alarma
+    - Estable
     - Peligro
+
 ### modelo 3D
  <img src="mold.png" alt="modelo_3d" width="400" height="400">
 
 ###  Interfaz Web
 
 - Sistema de login
-- Visualización de datos registrados
-- Historial de eventos de gas
-
-Este proyecto permite entender:
-- Envío de datos desde dispositivos IoT
-- Manejo de bases de datos
-- Desarrollo web 
+- Historial de detecciones de gas
 
 ### Prerrequisitos
 
-- Arduino IDE o PlatformIO
-- Servidor local (Laragon)
-- Base de datos SQL (Laragon)
-
+- Arduino IDE
+- Servidor local (Ej: Laragon)
+  
 ### Instalación
 
 1. Clonar el repositorio
 
 ```sh
 git clone https://github.com/Blinx87043/Gas-monitor
+
+2. Gestionar librerías
+
+```sh
+composer install
+
+3. Configurar el entorno
+
+```sh
+cp .env.example .env
+
+4. Importa el archivo SQL "database.sql"

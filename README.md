@@ -88,6 +88,8 @@ El sistema consiste en:
   - Clasifica el evento como:
     - Alarma
     - Peligro
+### modelo 3D
+ <img src="mold.png" alt="Logo" width="400" height="400">
 
 ###  Interfaz Web
 

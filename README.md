@@ -18,7 +18,7 @@
     Sistema de monitoreo de gas con ESP32 y base de datos web
     <br />
     <br />
-    <a href="#">Acerca del Proyecto</a>
+    <a href="#acerca-del-proyecto">Acerca del Proyecto</a>
     &middot;
     <a href="#">Tecnologías</a>
     &middot;

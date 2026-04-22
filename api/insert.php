@@ -82,7 +82,7 @@ function send_email($status)
             <p>Se ha detectado una concentración peligrosa de gas.</p>
             <ul>
                 <li><strong>Nivel: </strong> {$status}</li>
-                <li><strong>Fecha y hora: </strong> {date('Y-m-d H:i:s')}</li>
+                <li><strong>Fecha y hora: </strong>". date('Y-m-d H:i:s') ."</li>
             </ul>
             <div style='background-color: #f8d7da; border: 1px solid #f5c6cb; padding: 15px; border-radius: 5px;'>
                 <h3 style='margin-top: 0;'>INSTRUCCIONES:</h3>

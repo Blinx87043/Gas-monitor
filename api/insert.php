@@ -1,38 +1,39 @@
 <?php
-header('Access-Control-Allow-Origin: *');
-header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method");
-header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
-header("Allow: GET, POST, OPTIONS, PUT, DELETE");
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
 
-
-include('../config/database.php');
+require_once __DIR__ . '/../app/app.php';
 
 header('Content-Type: application/json');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    
     $input_data = json_decode(file_get_contents('php://input'), true);
 
     if (isset($input_data['ratio'])) {
 
         $ratio = floatval($input_data['ratio']);
 
-    if ($ratio >= 9) {$estado = "Estable";} 
-    elseif ($ratio <= 8.99 && $ratio >= 6.1) { $estado = "Alarma";}
-    elseif ($ratio <= 6){$estado = "Peligro";}
+        if ($ratio >= 9)
+            $status = "Estable";
+        elseif ($ratio <= 8.99 && $ratio >= 6.1)
+            $status = "Alarma";
+        elseif ($ratio <= 6)
+            $status = "Peligro";
 
-        
         $stmt = $conn->prepare("INSERT INTO gas (sensor,status, datatime) VALUES (:sensor,:status, NOW())");
-        $stmt->bindParam(':sensor', $ratio); 
-        $stmt->bindParam(':status', $estado); 
+        $stmt->bindParam(':sensor', $ratio);
+        $stmt->bindParam(':status', $status);
         if ($stmt->execute()) {
+            send_email($status);
+
             echo json_encode([
                 'success' => true,
                 'message' => 'Registrado correctamente',
                 'ratio' => $ratio,
-                'estado' => $estado
+                'estado' => $status
             ]);
         } else {
             echo json_encode([
@@ -55,27 +56,46 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     ]);
 }
 
+function send_email($status)
+{
+    $mail = new PHPMailer(true);
 
+    try {
+        $mail->CharSet = 'UTF-8';
+        $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+        $mail->isSMTP();
+        $mail->Host = $_ENV['SMTP_HOST'];
+        $mail->SMTPAuth = true;
+        $mail->Username = $_ENV['SMTP_USERNAME'];
+        $mail->Password = $_ENV['SMTP_PASSWORD'];
+        $mail->SMTPSecure = $_ENV['SMTP_SECURE'];
+        $mail->Port = $_ENV['SMTP_PORT'];
 
+        $mail->setFrom($_ENV['SMTP_USERNAME'], 'Gas Monitor Alerta');
+        $mail->addAddress($_ENV['SET_EMAIL_TO'], 'Administrador');
 
+        $mail->isHTML(true);
+        $mail->Subject = 'Emergencia';
+        $mail->Body = "
+        <div style='font-family: Arial, sans-serif; color: #333;'>
+            <h2 style='color: #d9534f;'>ALERTA DE SEGURIDAD</h2>
+            <p>Se ha detectado una concentración peligrosa de gas.</p>
+            <ul>
+                <li><strong>Nivel: </strong> {$status}</li>
+                <li><strong>Fecha y hora: </strong> {date('Y-m-d H:i:s')}</li>
+            </ul>
+            <div style='background-color: #f8d7da; border: 1px solid #f5c6cb; padding: 15px; border-radius: 5px;'>
+                <h3 style='margin-top: 0;'>INSTRUCCIONES:</h3>
+                <ol>
+                    <li>Evacúe el área inmediatamente.</li>
+                    <li>No accione interruptores eléctricos.</li>
+                    <li>Llame a los servicios de emergencia desde zona segura.</li>
+                </ol>
+            </div>
+        </div>";
 
-
-
-
-
-/*?php
-include('../config/database.php');
-
-if (isset($_GET['ratio'])) {
-
-    $ratio = floatval($_GET['ratio']);
-
-    
-    $estado = ($ratio <=8 && $ratio)  ;
-
-     $stmt = $conn->prepare("INSERT INTO leds (status, datatime) VALUES (?, NOW())");
-    $stmt->execute([$ratio]);
-    echo "OK";
-} else {
-    echo "No data";
-} */
+        $mail->send();
+    } catch (Exception $e) {
+        echo "El mensaje no pudo ser enviado. Error de PHPMailer: {$mail->ErrorInfo}";
+    }
+}

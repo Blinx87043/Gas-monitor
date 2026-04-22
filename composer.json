@@ -1,0 +1,7 @@
+{
+    "require": {
+        "s-damian/damian-pagination-php": "^1.0",
+        "phpmailer/phpmailer": "^7.0",
+        "vlucas/phpdotenv": "^5.6"
+    }
+}

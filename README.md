@@ -15,7 +15,7 @@
   
 
   <p align="center">
-    Sistema de monitoreo de gas con ESP32 y base de datos web
+    Sistema de monitoreo de gas con ESP32 e interfaz web
     <br />
     <br />
     <a href="#acerca-del-proyecto">Acerca del Proyecto</a>
@@ -32,8 +32,8 @@
   </p>
 </div>
 
-## Tabla de Contenidos
 <!--
+## Tabla de Contenidos
 <details>
   <summary>Click para expandir</summary>
   <ol>
